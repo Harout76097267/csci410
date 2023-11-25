@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 void main() {
@@ -28,7 +27,7 @@ class CategorySelectionPage extends StatelessWidget {
       body: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage('assets/main_img.png'), // Replace 'background_image.jpg' with your image asset path
+            image: AssetImage('assets/main_img.png'),
             fit: BoxFit.cover,
           ),
         ),
@@ -113,7 +112,7 @@ class _LengthConversionPageState extends State<LengthConversionPage> {
       body: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage('assets/lenght_img.png'), // Replace 'background_image.jpg' with your image asset path
+            image: AssetImage('assets/lenght_img.png'),
             fit: BoxFit.cover,
           ),
         ),
@@ -129,18 +128,18 @@ class _LengthConversionPageState extends State<LengthConversionPage> {
                     _inputValue = double.tryParse(value) ?? 0.0;
                   });
                 },
-                decoration: InputDecoration(labelText: 'Enter Length'),
+                decoration: InputDecoration(labelText: 'Enter Length in feet'),
               ),
               SizedBox(height: 100.0),
               ElevatedButton(
                 onPressed: () {
                   setState(() {
-                    // Perform length conversion logic here
-                    _outputValue = _inputValue * 0.3048; // Convert feet to meters as an example
+
+                    _outputValue = _inputValue * 0.3048;
                   });
                 },
                 style: ElevatedButton.styleFrom(
-                  primary: Colors.greenAccent, // Change the color of the Convert button
+                  primary: Colors.greenAccent,
                 ),
                 child: Text('Convert'),
               ),
@@ -175,7 +174,7 @@ class _TemperatureConversionPageState extends State<TemperatureConversionPage> {
       body: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage('assets/temp2_img.png'), // Replace 'background_image.jpg' with your image asset path
+            image: AssetImage('assets/temp2_img.png'),
             fit: BoxFit.cover,
           ),
         ),
@@ -197,12 +196,12 @@ class _TemperatureConversionPageState extends State<TemperatureConversionPage> {
               ElevatedButton(
                 onPressed: () {
                   setState(() {
-                    // Perform temperature conversion logic here
-                    _outputValue = (_inputValue - 32) * (5 / 9); // Convert Fahrenheit to Celsius as an example
+
+                    _outputValue = (_inputValue - 32) * (5 / 9);
                   });
                 },
                 style: ElevatedButton.styleFrom(
-                  primary: Colors.red, // Change the color of the Convert button
+                  primary: Colors.red,
                 ),
                 child: Text('Convert'),
               ),
@@ -218,6 +217,7 @@ class _TemperatureConversionPageState extends State<TemperatureConversionPage> {
     );
   }
 }
+
 class USDtoLBPConversionPage extends StatefulWidget {
   @override
   _USDtoLBPConversionPageState createState() => _USDtoLBPConversionPageState();
@@ -236,7 +236,7 @@ class _USDtoLBPConversionPageState extends State<USDtoLBPConversionPage> {
       body: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage('assets/Usd_Lbp_img.webp'), // Replace 'background_image.jpg' with your image asset path
+            image: AssetImage('assets/Usd_Lbp_img.webp'),
             fit: BoxFit.cover,
           ),
         ),
@@ -258,12 +258,12 @@ class _USDtoLBPConversionPageState extends State<USDtoLBPConversionPage> {
               ElevatedButton(
                 onPressed: () {
                   setState(() {
-                    // Perform conversion logic here
-                    _outputValue = _inputValue * 89500; // Convert USD to LBP as an example
+
+                    _outputValue = _inputValue * 89500;
                   });
                 },
                 style: ElevatedButton.styleFrom(
-                  primary: Colors.orange, // Change the color of the Convert button
+                  primary: Colors.orange,
                 ),
                 child: Text('Convert'),
               ),
@@ -298,7 +298,7 @@ class _WeightConversionPageState extends State<WeightConversionPage> {
       body: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage('assets/weight2_img.png'), // Replace 'background_image.jpg' with your image asset path
+            image: AssetImage('assets/weight2_img.png'),
             fit: BoxFit.cover,
           ),
         ),
@@ -320,12 +320,12 @@ class _WeightConversionPageState extends State<WeightConversionPage> {
               ElevatedButton(
                 onPressed: () {
                   setState(() {
-                    // Perform conversion logic here
-                    _outputValue = _inputValue * 2.20462; // Convert kilogram to pound as an example
+
+                    _outputValue = _inputValue * 2.20462;
                   });
                 },
                 style: ElevatedButton.styleFrom(
-                  primary: Colors.purple, // Change the color of the Convert button
+                  primary: Colors.purple,
                 ),
                 child: Text('Convert'),
               ),
@@ -341,4 +341,3 @@ class _WeightConversionPageState extends State<WeightConversionPage> {
     );
   }
 }
-
