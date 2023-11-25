@@ -218,4 +218,127 @@ class _TemperatureConversionPageState extends State<TemperatureConversionPage> {
     );
   }
 }
+class USDtoLBPConversionPage extends StatefulWidget {
+  @override
+  _USDtoLBPConversionPageState createState() => _USDtoLBPConversionPageState();
+}
+
+class _USDtoLBPConversionPageState extends State<USDtoLBPConversionPage> {
+  double _inputValue = 0.0;
+  double _outputValue = 0.0;
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('USD to LBP Conversion'),
+      ),
+      body: Container(
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage('assets/Usd_Lbp_img.webp'), // Replace 'background_image.jpg' with your image asset path
+            fit: BoxFit.cover,
+          ),
+        ),
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              TextField(
+                keyboardType: TextInputType.number,
+                onChanged: (value) {
+                  setState(() {
+                    _inputValue = double.tryParse(value) ?? 0.0;
+                  });
+                },
+                decoration: InputDecoration(labelText: 'Enter Value in USD'),
+              ),
+              SizedBox(height: 20.0),
+              ElevatedButton(
+                onPressed: () {
+                  setState(() {
+                    // Perform conversion logic here
+                    _outputValue = _inputValue * 89500; // Convert USD to LBP as an example
+                  });
+                },
+                style: ElevatedButton.styleFrom(
+                  primary: Colors.orange, // Change the color of the Convert button
+                ),
+                child: Text('Convert'),
+              ),
+              SizedBox(height: 20.0),
+              Text(
+                ' $_outputValue LBP ',
+                style: TextStyle(fontSize: 30.0),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class WeightConversionPage extends StatefulWidget {
+  @override
+  _WeightConversionPageState createState() => _WeightConversionPageState();
+}
+
+class _WeightConversionPageState extends State<WeightConversionPage> {
+  double _inputValue = 0.0;
+  double _outputValue = 0.0;
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('kg to pound Conversion'),
+      ),
+      body: Container(
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage('assets/weight2_img.png'), // Replace 'background_image.jpg' with your image asset path
+            fit: BoxFit.cover,
+          ),
+        ),
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              TextField(
+                keyboardType: TextInputType.number,
+                onChanged: (value) {
+                  setState(() {
+                    _inputValue = double.tryParse(value) ?? 0.0;
+                  });
+                },
+                decoration: InputDecoration(labelText: 'Enter the Weight in KiloGram'),
+              ),
+              SizedBox(height: 20.0),
+              ElevatedButton(
+                onPressed: () {
+                  setState(() {
+                    // Perform conversion logic here
+                    _outputValue = _inputValue * 2.20462; // Convert kilogram to pound as an example
+                  });
+                },
+                style: ElevatedButton.styleFrom(
+                  primary: Colors.purple, // Change the color of the Convert button
+                ),
+                child: Text('Convert'),
+              ),
+              SizedBox(height: 20.0),
+              Text(
+                'Result: $_outputValue Pound',
+                style: TextStyle(fontSize: 20.0),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
 
